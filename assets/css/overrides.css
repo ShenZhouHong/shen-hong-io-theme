@@ -1,5 +1,10 @@
 /* Customisations that 'override' Casper's default stylesheets */
 
+:root {
+    /* Improve Contrast Ratio for Better Accessibility */
+    --color-secondary-text: #585858;
+}
+
 body {
     /* Use libertinus font */
     font-family: libertinus_sansregular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;

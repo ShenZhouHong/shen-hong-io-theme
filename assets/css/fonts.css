@@ -5,6 +5,7 @@
          url('fonts/libertinusserif-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'libertinus_serifitalic';
@@ -12,6 +13,7 @@
          url('fonts/libertinusserif-italic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: italic;
+    font-display: swap;
 }
 @font-face {
     font-family: 'libertinus_serifsemibold';
@@ -19,6 +21,7 @@
          url('fonts/libertinusserif-semibold-webfont.woff') format('woff');
     font-weight: 600;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'libertinus_serifSBdIt';
@@ -26,6 +29,7 @@
          url('fonts/libertinusserif-semibolditalic-webfont.woff') format('woff');
     font-weight: 600;
     font-style: italic;
+    font-display: swap;
 }
 @font-face {
     font-family: 'libertinus_serifbold';
@@ -33,6 +37,7 @@
          url('fonts/libertinusserif-bold-webfont.woff') format('woff');
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'libertinus_serifbold_italic';
@@ -40,6 +45,7 @@
          url('fonts/libertinusserif-bolditalic-webfont.woff') format('woff');
     font-weight: bold;
     font-style: italic;
+    font-display: swap;
 }
 
 /* Libertinus Sans and Variants */
@@ -49,6 +55,7 @@
          url('fonts/libertinussans-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'libertinus_sansitalic';
@@ -56,6 +63,7 @@
          url('fonts/libertinussans-italic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: italic;
+    font-display: swap;
 }
 @font-face {
     font-family: 'libertinus_sansbold';
@@ -63,6 +71,7 @@
          url('fonts/libertinussans-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 /* Libertinus Mono */
 @font-face {
@@ -71,4 +80,5 @@
          url('fonts/libertinusmono-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
