@@ -45,31 +45,79 @@ function hbs(done) {
 }
 
 function css(done) {
+    // Include font files for KaTeX and Libertinus OTF
     pump([
-        src('assets/css/*.css', {sourcemaps: true}),
+        src([
+            'assets/fonts/*',
+            'node_modules/katex/dist/fonts/*'
+        ]),
+        dest('assets/built/fonts/'),
+    ], handleError(done));
+    // Concatenate CSS Files for default.hbs
+    pump([
+        src([
+            // Prism.js for syntax highlighting
+            'node_modules/prismjs/themes/prism-tomorrow.css',
+            // KaTeX for LaTeX formatting
+            'node_modules/katex/dist/katex.css',
+            // Theme stylesheets
+            'assets/css/global.css',
+            'assets/css/fonts.css',
+            'assets/css/screen.css',
+            'assets/css/overrides.css',
+        ], {sourcemaps: true}),
         postcss([
             easyimport,
             colorFunction(),
             autoprefixer(),
             cssnano()
         ]),
+        concat('default.css'),
         dest('assets/built/', {sourcemaps: '.'}),
         livereload()
     ], handleError(done));
 }
 
 function js(done) {
+    // Include component language files for PrismJS (syntax highlighting)
     pump([
         src([
+            'node_modules/prismjs/components/*.min.js'
+        ], {sourcemaps: true}),
+        dest('assets/built/components/', {sourcemaps: '.'}),
+    ], handleError(done));
+    // Create main JS file for default.hbs. Excludes post-specific libraries
+    pump([
+        src([
+            // Jquery
+            'node_modules/jquery/dist/jquery.js',
             // pull in lib files first so our own code can depend on it
             'assets/js/lib/*.js',
-            'assets/js/*.js'
+            'assets/js/*.js',
+            '!assets/js/katex-autorender-helper.js'
         ], {sourcemaps: true}),
-        concat('casper.js'),
+        concat('default.js'),
         uglify(),
         dest('assets/built/', {sourcemaps: '.'}),
         livereload()
     ], handleError(done));
+    // Create main JS file for post.hbs. Includes KaTeX and PrismJS libraries
+    pump([
+        src([
+            // Prism.js for syntax highlighting
+            'node_modules/prismjs/prism.js',
+            'node_modules/prismjs/plugins/autoloader/prism-autoloader.js',
+            // KaTeX for LaTeX formatting
+            'node_modules/katex/dist/katex.js',
+            'node_modules/katex/dist/contrib/auto-render.js',
+            'assets/js/katex-autorender-helper.js'
+        ], {sourcemaps: true}),
+        concat('post.js'),
+        uglify(),
+        dest('assets/built/', {sourcemaps: '.'}),
+        livereload()
+    ], handleError(done));
+
 }
 
 function zipper(done) {

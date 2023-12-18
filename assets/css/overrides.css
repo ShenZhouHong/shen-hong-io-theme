@@ -1,0 +1,42 @@
+/* Customisations that 'override' Casper's default stylesheets */
+
+body {
+    /* Use libertinus font */
+    font-family: libertinus_sansregular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.gh-head a {
+    font-size: large;
+    font-weight: bold;
+}
+
+.gh-content > p {
+    /* Text body tweaks */
+    text-align: justify;
+    font-size: 2.2rem;
+
+    /* Hyphenation */
+    hyphens: auto;
+    hyphenate-limit-chars: 6 3 3;
+    hyphenate-limit-lines: 2;
+    hyphenate-limit-last: always;
+    hyphenate-limit-zone: 8%;
+
+    /* Hyphenation Vendor Prefixes */
+    -webkit-hyphenate-limit-before: 3;
+    -webkit-hyphenate-limit-after: 3;
+    -webkit-hyphenate-limit-chars: 6 3 3;
+    -webkit-hyphenate-limit-lines: 2;
+    -webkit-hyphenate-limit-last: always;
+    -webkit-hyphenate-limit-zone: 8%;
+    
+    -moz-hyphenate-limit-chars: 6 3 3;
+    -moz-hyphenate-limit-lines: 2;
+    -moz-hyphenate-limit-last: always;
+    -moz-hyphenate-limit-zone: 8%;
+
+    -ms-hyphenate-limit-chars: 6 3 3;
+    -ms-hyphenate-limit-lines: 2;
+    -ms-hyphenate-limit-last: always;
+    -ms-hyphenate-limit-zone: 8%;
+}
