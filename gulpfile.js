@@ -90,7 +90,7 @@ function js(done) {
     pump([
         src([
             // Jquery
-            'node_modules/jquery/dist/jquery.js',
+            'node_modules/jquery/dist/jquery.slim.js',
             // pull in lib files first so our own code can depend on it
             'assets/js/lib/*.js',
             'assets/js/*.js',
