@@ -89,8 +89,9 @@ function js(done) {
     // Create main JS file for default.hbs. Excludes post-specific libraries
     pump([
         src([
-            // Jquery
-            'node_modules/jquery/dist/jquery.slim.js',
+            // We will use Zepto instead Jquery:
+            // 'node_modules/jquery/dist/jquery.slim.js',
+            'node_modules/zepto/dist/zepto.js',
             // pull in lib files first so our own code can depend on it
             'assets/js/lib/*.js',
             'assets/js/*.js',

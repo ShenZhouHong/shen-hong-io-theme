@@ -18,7 +18,7 @@
     var endpoint = '/api/event'; // || scriptEl.getAttribute('data-api') || defaultEndpoint(scriptEl)
   
     function onIgnoredEvent(reason, options) {
-      if (reason) console.warn('Ignoring Event: ' + reason);
+      if (reason) console.info('Ignoring Event: ' + reason);
       options && options.callback && options.callback()
     }
   
